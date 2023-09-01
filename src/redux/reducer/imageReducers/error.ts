@@ -1,17 +1,16 @@
 import { IMAGES } from '../../actionTypes';
 
-const loadingReducer = (state = false, action) => {
+const errorReducer = (state = null, action) => {
   switch (action.type) {
-    case IMAGES.LOAD:
-      return true;
-    case IMAGES.LOAD_SUCCESS:
-      return false;
     case IMAGES.LOAD_FAIL:
-      return false;
+      return action.error;
+    case IMAGES.LOAD:
+    case IMAGES.LOAD_SUCCESS:
+      return null;
 
     default:
       return state;
   }
 };
 
-export default loadingReducer;
+export default errorReducer;
