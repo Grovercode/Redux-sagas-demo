@@ -8,7 +8,8 @@ function* handleStatsRequest(id) {
     try {
       yield put(loadImageStats(id));
       const res = yield call(fetchImageStats, id);
-      yield put(setImageStats(id, res.download.total));
+      console.log('We got res = ', res);
+      yield put(setImageStats(id, res.downloads.total));
       return true;
     } catch (error) {}
   }

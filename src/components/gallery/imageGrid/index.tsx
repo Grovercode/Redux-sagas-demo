@@ -3,6 +3,7 @@ import { loadImages } from '../../../redux/actions';
 import { connect } from 'react-redux';
 import './styles.css';
 import { Button } from '@chakra-ui/react';
+import Stats from '../stats';
 
 const key = 'vso1n52i5tSd7jM0yAgAz-KvnF0E6b6rQrB3lpUlchE';
 
@@ -22,6 +23,7 @@ class ImageGrid extends Component {
               key={image.id}
               className={`item item-${Math.ceil(image.height / image.width)}`}
             >
+              <Stats stats={imageStats[image.id]} />
               <img src={image.urls.small} alt={image.user.username} />
             </div>
           ))}
