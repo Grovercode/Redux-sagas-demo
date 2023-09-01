@@ -37,7 +37,7 @@ class ImageGrid extends Component {
   }
 }
 
-const mapStateToProps = ({ isLoading, images, error, imageStats }) => ({
+const mapStateToProps = ({ isLoading, images, error, imageStats, pages }) => ({
   isLoading,
   images,
   error,

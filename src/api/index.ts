@@ -10,7 +10,6 @@ export const fetchUsers = () => {
 export const fetchImages = async (page) => {
   const response = await fetch(`${URL}${KEY}&per_page=3&page=${page}`);
   const data = await response.json();
-  console.log('data = ', data);
   if (response.status >= 400) {
     throw new Error(data.errors);
   }

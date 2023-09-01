@@ -12,8 +12,7 @@ const statsReducer = (state = [], action) => {
         },
       };
 
-    case STATS.LOAD_SUCCESS: {
-      console.log('Action on success is = ', action);
+    case STATS.LOAD_SUCCESS:
       return {
         ...state,
         [action.id]: {
@@ -22,7 +21,6 @@ const statsReducer = (state = [], action) => {
           error: false,
         },
       };
-    }
 
     case STATS.LOAD_FAIL:
       return {

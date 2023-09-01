@@ -28,7 +28,6 @@ class ReduxForm extends React.Component {
 
     const error: any = {};
     let isError = false;
-    console.log('first name = ', firstName);
     if (firstName === '') {
       error.firstName = 'First name is required';
       isError = true;

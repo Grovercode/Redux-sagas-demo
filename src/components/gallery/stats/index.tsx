@@ -13,7 +13,6 @@ const Container = styled.span`
 `;
 
 const Stats = ({ stats }) => {
-  console.log('stats = ', stats);
   if (!stats) {
     // loading not yet started
     return <span className="stats">Loading...</span>;
