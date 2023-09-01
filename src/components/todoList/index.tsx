@@ -1,8 +1,8 @@
+import React from 'react';
 import { Box } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { Todo } from '../todo';
 import { getTodosByVisibilityFilter } from '../../redux/selector';
-import React from 'react';
 
 export const TodoList = () => {
   const { todos, visibilityFilter } = useSelector((state) => state);

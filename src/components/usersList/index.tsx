@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUsersFetch } from '../../redux/actions';
 import { Button, Flex, Heading } from '@chakra-ui/react';
 

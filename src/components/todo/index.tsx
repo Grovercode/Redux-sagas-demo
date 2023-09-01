@@ -1,6 +1,7 @@
-import { Box, Checkbox, Text } from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
-import { toggleTodo } from "../../redux/actions";
+import React from 'react';
+import { Box, Checkbox, Text } from '@chakra-ui/react';
+import { useDispatch } from 'react-redux';
+import { toggleTodo } from '../../redux/actions';
 
 export const Todo = ({ todo }: any) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const Todo = ({ todo }: any) => {
         isChecked={todo?.completed}
         onChange={handleCheck}
       >
-        <Text as={todo.completed && "del"}>{todo.content}</Text>
+        <Text as={todo.completed && 'del'}>{todo.content}</Text>
       </Checkbox>
     </Box>
   );

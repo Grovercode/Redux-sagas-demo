@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Button, Container, Heading } from '@chakra-ui/react';
 import { AddTodo } from './components/addTodo';
 import { TodoList } from './components/todoList';
@@ -12,9 +12,6 @@ import { useNavigate } from 'react-router-dom';
 function App() {
   const navigate = useNavigate();
 
-  const showValue = (values: any) => {
-    console.log('values in parent = ', values);
-  };
   return (
     <Container maxW="container.sm">
       <Heading my="4">Todo List</Heading>
@@ -22,7 +19,7 @@ function App() {
       <TodoList />
       <VisibilityFilter />
       <UsersList />
-      <ReduxForm onSubmit={showValue} />
+      <ReduxForm />
       <MultipleEntryForm />
       <ReactHookForm />
       <Heading my="4">Galery app </Heading>

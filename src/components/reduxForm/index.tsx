@@ -1,9 +1,9 @@
-import React from "react";
-import { Button, Heading } from "@chakra-ui/react";
-import styled from "@emotion/styled";
-import { Field, SubmissionError, reduxForm } from "redux-form";
-import { Input } from "@chakra-ui/react";
-import { connect } from "react-redux";
+import React from 'react';
+import { Button, Heading } from '@chakra-ui/react';
+import styled from '@emotion/styled';
+import { Field, SubmissionError, reduxForm } from 'redux-form';
+import { Input } from '@chakra-ui/react';
+import { connect } from 'react-redux';
 
 const Wrapper = styled.div`
   margin-top: 50px;
@@ -24,31 +24,31 @@ class ReduxForm extends React.Component {
   );
 
   submit = (fields: any) => {
-    const { firstName = "", lastName = "", email = "" } = fields;
+    const { firstName = '', lastName = '', email = '' } = fields;
 
     const error: any = {};
     let isError = false;
-    console.log("first name = ", firstName);
-    if (firstName === "") {
-      error.firstName = "First name is required";
+    console.log('first name = ', firstName);
+    if (firstName === '') {
+      error.firstName = 'First name is required';
       isError = true;
     }
 
-    if (lastName === "") {
-      error.lastName = "Last name is required";
+    if (lastName === '') {
+      error.lastName = 'Last name is required';
       isError = true;
     }
 
-    if (email === "") {
-      error.email = "Email is required";
+    if (email === '') {
+      error.email = 'Email is required';
       isError = true;
     }
 
     if (isError) {
       throw new SubmissionError(error);
     } else {
-      console.log("Valid submition");
-      this?.props?.onSubmit(fields);
+      console.log('Valid submition');
+      // this?.props?.onSubmit(fields);
     }
   };
 
@@ -69,11 +69,11 @@ class ReduxForm extends React.Component {
             <label htmlFor="lastName">Last Name</label>
             <Field name="lastName" component={this.renderField} type="text" />
           </div>
-          <div style={{ marginBottom: "10px" }}>
+          <div style={{ marginBottom: '10px' }}>
             <label htmlFor="email">Email</label>
             <Field name="email" component={this.renderField} type="email" />
           </div>
-          <Button style={{ width: "100%" }} type="submit">
+          <Button style={{ width: '100%' }} type="submit">
             Submit
           </Button>
         </form>
@@ -82,7 +82,7 @@ class ReduxForm extends React.Component {
   }
 }
 
-ReduxForm = reduxForm({ form: "contact" })(ReduxForm);
+ReduxForm = reduxForm({ form: 'contact' })(ReduxForm);
 
 const mapStateToProps = (state: any) => {
   return {

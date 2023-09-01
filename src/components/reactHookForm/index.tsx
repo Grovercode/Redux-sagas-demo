@@ -1,9 +1,9 @@
+import React from 'react';
 import { Button, Heading } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { Input } from '@chakra-ui/react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { useEffect } from 'react';
-import React from 'react';
 
 const indianPhoneNumberRegex = /^[789]\d{9}$/;
 
