@@ -5,7 +5,6 @@ import { Button, Flex, Heading } from '@chakra-ui/react';
 
 export const UsersList = () => {
   const { users } = useSelector((state) => state);
-  console.log('users = ', users);
   const dispatch = useDispatch();
 
   return (

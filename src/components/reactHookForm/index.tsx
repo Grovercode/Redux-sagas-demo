@@ -68,9 +68,6 @@ const ReactHookForm = () => {
     console.log('Form submitted with data = ', data);
   };
 
-  console.log('errors = ', errors);
-  console.log('Form state = ', formState);
-
   const handleSetValues = () => {
     setValue('username', '', {
       shouldDirty: true,

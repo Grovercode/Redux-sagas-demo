@@ -4,7 +4,8 @@ import {
   GET_USERS_FETCH,
   SET_FILTER,
   TOGGLE_TODO,
-} from "./actionTypes";
+  STATS,
+} from './actionTypes';
 
 let nextTodoId = 0;
 export const addTodo = (content: any) => {
@@ -39,18 +40,32 @@ export const getUsersFetch = () => ({
   type: GET_USERS_FETCH,
 });
 
-export const loadImages = () => (
-  {
-    type: IMAGES.LOAD,
-  }
-)
+export const loadImages = () => ({
+  type: IMAGES.LOAD,
+});
 
-export const setImages = (images : any)=> ({
-  type: IMAGES.LOAD_SUCCESS, 
-  images
-})
+export const setImages = (images: any) => ({
+  type: IMAGES.LOAD_SUCCESS,
+  images,
+});
 
-export const setError = (error : any) => ({
+export const setError = (error: any) => ({
   type: IMAGES.LOAD_FAIL,
   error,
-})
+});
+
+export const loadImageStats = (id) => ({
+  type: STATS.LOAD,
+  id,
+});
+
+export const setImageStats = (id, downloads) => ({
+  type: STATS.LOAD_SUCCESS,
+  id,
+  downloads,
+});
+
+export const setImageStatsError = (id) => ({
+  type: STATS.LOAD_FAIL,
+  id,
+});

@@ -1,21 +1,16 @@
 import { call, put, takeEvery, all, select } from 'redux-saga/effects';
-import { fetchImages } from '../api';
-import { setError, setImages } from './actions';
-import { GET_USERS_FETCH, GET_USERS_SUCCESS, IMAGES } from './actionTypes';
+import { fetchImages, fetchUsers } from '../../api';
+import { setError, setImages } from '../actions';
+import { GET_USERS_FETCH, GET_USERS_SUCCESS, IMAGES } from '../actionTypes';
+import { watchStatsRequest } from './statsSaga';
 
-function usersFetch() {
-  return fetch(`https://jsonplaceholder.typicode.com/users`).then((res) =>
-    res.json()
-  );
-}
-
-function* workGetUsersFetch() {
-  const users = yield call(usersFetch);
+function* getUsersFetch() {
+  const users = yield call(fetchUsers);
   yield put({ type: GET_USERS_SUCCESS, users });
 }
 
 function* watchUsers() {
-  yield takeEvery(GET_USERS_FETCH, workGetUsersFetch);
+  yield takeEvery(GET_USERS_FETCH, getUsersFetch);
 }
 
 export const getPage = (state) => state.nextPage;
@@ -35,7 +30,7 @@ function* watchImagesLoad() {
 }
 
 function* rootSaga() {
-  yield all([watchUsers(), watchImagesLoad()]);
+  yield all([watchUsers(), watchImagesLoad(), watchStatsRequest()]);
 }
 
 export default rootSaga;

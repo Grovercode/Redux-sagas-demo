@@ -54,7 +54,7 @@ class MyForm extends React.Component {
   render() {
     console.log(this.props.currentState);
     const { handleSubmit, members } = this.props;
-    console.log('members = ', members);
+
     return (
       <>
         <Heading my="4">Multiple entry Form</Heading>

@@ -1,6 +1,11 @@
-const KEY =
-  '?client_id=5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
+const KEY = '?client_id=vso1n52i5tSd7jM0yAgAz-KvnF0E6b6rQrB3lpUlchE';
 const URL = `https://api.unsplash.com/photos/`;
+
+export const fetchUsers = () => {
+  return fetch(`https://jsonplaceholder.typicode.com/users`).then((res) =>
+    res.json()
+  );
+};
 
 export const fetchImages = async (page) => {
   const response = await fetch(`${URL}${KEY}&per_page=3&page=${page}`);
@@ -11,3 +16,5 @@ export const fetchImages = async (page) => {
   }
   return data;
 };
+
+export const fetchImageStats = async (id) => {};

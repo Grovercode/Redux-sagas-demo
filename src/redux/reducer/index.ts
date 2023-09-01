@@ -7,6 +7,7 @@ import loadingReducer from './imageReducers/loading';
 import errorReducer from './imageReducers/error';
 import imagesReducer from './imageReducers/image';
 import pageReducer from './imageReducers/pages';
+import statsReducer from './statsReducer';
 
 export default combineReducers({
   todos,
@@ -16,5 +17,6 @@ export default combineReducers({
   images: imagesReducer,
   error: errorReducer,
   nextPage: pageReducer,
+  imageStats: statsReducer,
   form: formReducer,
 });
