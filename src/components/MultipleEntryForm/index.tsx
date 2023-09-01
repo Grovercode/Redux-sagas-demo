@@ -24,7 +24,7 @@ class MyForm extends React.Component {
       style={{ width: '100%' }}
       isInvalid={field.meta.error}
       {...field.input}
-      type="text"
+      type="text" 
     />
   );
 
