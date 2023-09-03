@@ -25,7 +25,7 @@ function App() {
       <Heading my="4">Galery app </Heading>
       <Button
         mb="100"
-        width="100"
+        width="100%"
         onClick={() => {
           navigate('/gallery');
         }}
