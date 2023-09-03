@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Heading } from '@chakra-ui/react';
+import { Button, Heading, Text } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import { Field, SubmissionError, reduxForm } from 'redux-form';
+import { Field, SubmissionError, reduxForm, reset } from 'redux-form';
 import { Input } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 
@@ -48,6 +48,7 @@ class ReduxForm extends React.Component {
     } else {
       console.log('Valid submition');
       // this?.props?.onSubmit(fields);
+      this?.props?.dispatch(reset('contact'));
     }
   };
 
@@ -57,7 +58,10 @@ class ReduxForm extends React.Component {
 
     return (
       <Wrapper>
-        <Heading my="4">Redux Form handling</Heading>
+        <Heading>Redux Form handling</Heading>
+        <Heading mb="4" as="h5" fontSize="lg" fontWeight="medium">
+          Class based component
+        </Heading>
 
         <form onSubmit={handleSubmit(this.submit)}>
           <div>

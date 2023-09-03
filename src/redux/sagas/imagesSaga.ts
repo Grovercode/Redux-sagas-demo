@@ -3,9 +3,9 @@ import { fetchImages } from '../../api';
 import { setError, setImages } from '../actions';
 import { IMAGES } from '../actionTypes';
 
-const getPage = (state) => state.nextPage;
+export const getPage = (state) => state.nextPage;
 
-function* handleImagesLoad() {
+export function* handleImagesLoad() {
   try {
     const page = yield select(getPage);
     const images = yield call(fetchImages, page);

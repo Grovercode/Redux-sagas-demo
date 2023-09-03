@@ -2,7 +2,13 @@ import React from 'react';
 import { Button, Heading, Input } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
-import { Field, FieldArray, reduxForm, formValueSelector } from 'redux-form';
+import {
+  Field,
+  FieldArray,
+  reduxForm,
+  formValueSelector,
+  reset,
+} from 'redux-form';
 
 const InputContainer = styled.div`
   display: flex;
@@ -24,7 +30,7 @@ class MyForm extends React.Component {
       style={{ width: '100%' }}
       isInvalid={field.meta.error}
       {...field.input}
-      type="text" 
+      type="text"
     />
   );
 
@@ -53,12 +59,19 @@ class MyForm extends React.Component {
 
   render() {
     console.log(this.props.currentState);
-    const { handleSubmit, members } = this.props;
+    const { handleSubmit, members, dispatch } = this.props;
 
     return (
       <>
-        <Heading my="4">Multiple entry Form</Heading>
-        <form onSubmit={handleSubmit(() => {})}>
+        <Heading mt="10">Multiple entry redux form</Heading>
+        <Heading mb="4" as="h5" fontSize="lg" fontWeight="medium">
+          Class based component
+        </Heading>
+        <form
+          onSubmit={handleSubmit(() => {
+            dispatch(reset('FieldArraySample'));
+          })}
+        >
           {/* Other fields */}
           <FieldArray name="members" component={this.renderMembers} />
 
