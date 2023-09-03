@@ -14,7 +14,7 @@ function App() {
 
   return (
     <Container maxW="container.sm">
-      <Heading my="4">Todo List</Heading>
+      <Heading my="4">Todo List (Redux)</Heading>
       <AddTodo />
       <TodoList />
       <VisibilityFilter />

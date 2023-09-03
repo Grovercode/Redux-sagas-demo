@@ -14,7 +14,7 @@ export const TodoList = () => {
         filterTodos.map((todo: any) => <Todo key={todo?.id} todo={todo} />)
       ) : (
         <Box textAlign="center" my="4">
-          No Todos yet!
+          No Todos here!
         </Box>
       )}
     </Box>
