@@ -1,7 +1,7 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
-import { fetchImages } from '../../api';
-import { setError, setImages } from '../actions';
-import { IMAGES } from '../actionTypes';
+import { fetchImages } from '../../../api';
+import { setError, setImages } from '../../actions';
+import { IMAGES } from '../../actionTypes';
 
 export const getPage = (state) => state.nextPage;
 

@@ -1,5 +1,5 @@
-import { VISIBILITY_FILTER } from "../../components/util";
-import { SET_FILTER } from "../actionTypes";
+import { VISIBILITY_FILTER } from '../../../components/util';
+import { SET_FILTER } from '../../actionTypes';
 
 const initialState = VISIBILITY_FILTER.ALL;
 

@@ -1,4 +1,4 @@
-import { GET_USERS_SUCCESS } from "../actionTypes";
+import { GET_USERS_SUCCESS } from '../../actionTypes';
 
 const initialState: any = { users: [] };
 

@@ -1,7 +1,11 @@
-import { IMAGES } from '../actionTypes';
+import { IMAGES } from '../../actionTypes';
 import { take, fork, call, put } from 'redux-saga/effects';
-import { loadImageStats, setImageStats, setImageStatsError } from '../actions';
-import { fetchImageStats } from '../../api';
+import {
+  loadImageStats,
+  setImageStats,
+  setImageStatsError,
+} from '../../actions';
+import { fetchImageStats } from '../../../api';
 
 function* handleStatsRequest(id) {
   for (let i = 0; i < 3; i++) {
