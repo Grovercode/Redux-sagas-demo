@@ -8,6 +8,7 @@ import ReduxForm from './components/reduxForm';
 import MultipleEntryForm from './components/MultipleEntryForm';
 import ReactHookForm from './components/reactHookForm';
 import { useNavigate } from 'react-router-dom';
+import YupForm from './components/yupForm';
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function App() {
       >
         Click to go to gallery app
       </Button>
+      <YupForm />
     </Container>
   );
 }
